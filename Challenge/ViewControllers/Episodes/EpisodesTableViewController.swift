@@ -44,6 +44,18 @@ class EpisodesTableViewController: UITableViewController {
         self.tableView.register(episodeCell, forCellReuseIdentifier: episodeCellIdentifier)
     }
     
+    // MARK: - Segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let episodeID = sender as? Int else { return }
+        
+        if segue.identifier == "EpisodeDetailsSegue" {
+            if let episodeDetailsVC = segue.destination as? EpisodeDetailsViewController {
+                episodeDetailsVC.episodeID = episodeID
+            }
+        }
+    }
+    
     // MARK: - TableView Delegate
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -51,7 +63,17 @@ class EpisodesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 96
+        return 58
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let index = episodesViewModel?.seasonsWithEpisodes.sorted(by: {$0.key < $1.key}).map({Int($0.key) })[indexPath.section] {
+            if let episodeID = self.episodesViewModel?.seasonsWithEpisodes[index]?[indexPath.row].id {
+                
+                performSegue(withIdentifier: "EpisodeDetailsSegue", sender: episodeID)
+            }
+        }
     }
     
     // MARK: - TableView Data Source
@@ -82,10 +104,6 @@ class EpisodesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: episodeCellIdentifier) as? EpisodeCell else {
             return UITableViewCell(style: .value1, reuseIdentifier: "cell")
-        }
-        
-        if indexPath.section == 1 {
-            print("entrou")
         }
         
         if let index = episodesViewModel?.seasonsWithEpisodes.sorted(by: {$0.key < $1.key}).map({Int($0.key) })[indexPath.section] {

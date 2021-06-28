@@ -12,6 +12,7 @@ import UIKit
 // MARK: - Protocol
 protocol ShowDetailsDelegate {
     func didGetShowDetails()
+    func didFailtToGetShowDetails()
     func didGetShowImages()
     func didGetShowCast()
 }
@@ -55,7 +56,7 @@ class HomeDetailsViewModel {
     // MARK: - Methods
     
     /**
-        Retrieve the data from a given specific Show. The result can be a success (which brings the show's data), or a failure (which brings an Error object)
+        Retrieve the data from a given Show. The result can be a success (which brings the show's data), or a failure (which brings an Error object)
      
         - Parameter showID: The ID of the show to be searched over the API (Int)
     */
@@ -66,12 +67,13 @@ class HomeDetailsViewModel {
                     self?.show = showDetails
                 case .failure(let error):
                     print(error)
+                    self?.showDetailsDelegate?.didFailtToGetShowDetails()
             }
         }
     }
     
     /**
-        Retrieve the images from a given specific Show. The result can be a success (which brings the show's images), or a failure (which brings an Error object)
+        Retrieve the images from a given Show. The result can be a success (which brings the show's images), or a failure (which brings an Error object)
      
         - Parameter showID: The ID of the show to be searched over the API (Int)
     */

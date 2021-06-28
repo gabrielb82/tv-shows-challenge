@@ -19,4 +19,5 @@ class Endpoints {
     static let castCredits = "/castcredits?embed=show"
     static let crewCredits = "/crewcredits?embed=show"
     static let searchShows = "/shows?q="
+    static let episodeDetails = "episodes/"
 }

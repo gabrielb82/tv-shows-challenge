@@ -68,7 +68,7 @@ class PINViewController: UIViewController {
                 pinTextField?.becomeFirstResponder()
             }
             
-        }else {
+        } else {
             pinTextField?.becomeFirstResponder()
         }
         

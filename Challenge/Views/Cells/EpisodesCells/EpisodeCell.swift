@@ -14,8 +14,6 @@ class EpisodeCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel?
     @IBOutlet weak var airDateLabel: UILabel?
     @IBOutlet weak var durationLabel: UILabel?
-    @IBOutlet weak var summaryLabel: UILabel?
-    @IBOutlet weak var photoImageView: UIImageView?
     
     // MARK: - Variables
     
@@ -24,15 +22,6 @@ class EpisodeCell: UITableViewCell {
             nameLabel?.text = "\(episode?.number ?? 0) - \(episode?.name ?? "")"
             airDateLabel?.text = "\(episode?.airdate?.stringDateToPattern() ?? "") - \(episode?.airtime ?? "")"
             durationLabel?.text = "\(episode?.runtime ?? 0)min."
-            summaryLabel?.attributedText = episode?.summary?.htmlToAttributedString
-            if let imageURL = episode?.image?.medium {
-                photoImageView?.downloadImage(from: imageURL, contentMode: .scaleAspectFill)
-            }
-            else {
-                photoImageView?.image = UIImage(named: "no-image")
-            }
-            
-            photoImageView?.roundedCorner(radius: 5)
         }
     }
     

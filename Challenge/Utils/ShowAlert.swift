@@ -10,11 +10,17 @@ import UIKit
 
 class ShowAlert {
     
-    static func showSimpleAlert(with title: String, message: String, preferredStyle: UIAlertController.Style, viewController: UIViewController) {
+    static func showSimpleAlert(with title: String, message: String, preferredStyle: UIAlertController.Style, viewController: UIViewController, willNavigateBack: Bool = false) {
         let ac = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
         
-        ac.addAction(UIAlertAction(title: "OK", style: .default))
-        viewController.present(ac, animated: true)
+        if willNavigateBack {
+            ac.addAction(UIAlertAction(title: "", style: .default, handler: { action in
+                viewController.navigationController?.popViewController(animated: true)
+            }))
+        }else {
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            viewController.present(ac, animated: true)
+        }
     }
 
 }

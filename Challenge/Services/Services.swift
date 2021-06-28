@@ -344,4 +344,43 @@ class Services {
         task.resume()
         
     }
+    
+    /**
+        Function to retrieve the data of a given Episode from the API
+     
+        - Parameter ID: ID of the Episode to be retrieved
+        - Parameter completion: Handles the response from the API
+    */
+    func getEpisodeDetails(id:Int?, completion: @escaping(Result<Episode?, Error>) -> Void ){
+        
+        let endpoint = "\(BASEURL)\(Endpoints.episodeDetails)\(id ?? 0)"
+        
+        let url = URLRequest(url: URL(string: endpoint)!)
+        
+        let task = session.dataTask(with: url, completionHandler: {
+            (data, response, error) in
+            
+            guard let responseData = data else {
+                completion(.failure(AppError.genericError))
+                return
+            }
+            
+            guard error == nil else {
+                completion(.failure(error ?? AppError.genericError))
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            do {
+                let episodeDetail = try decoder.decode(Episode.self, from: responseData)
+                completion(.success(episodeDetail))
+            } catch {
+                completion(.failure(AppError.genericError))
+            }
+            
+        })
+        
+        task.resume()
+        
+    }
 }

@@ -231,6 +231,15 @@ class HomeDetailsViewController: UIViewController {
 
 // MARK: - Delegate Extensions
 extension HomeDetailsViewController : ShowDetailsDelegate {
+    func didFailtToGetShowDetails() {
+        DispatchQueue.main.async {
+            SwiftSpinner.hide()
+            
+            self.navigationController?.popViewController(animated: true)
+            ShowAlert.showSimpleAlert(with: "Error", message: "Error while loading show details.", preferredStyle: .alert, viewController: self)
+        }
+    }
+    
     func didGetShowCast() {
         DispatchQueue.main.sync {
             self.castTableView?.reloadData()
