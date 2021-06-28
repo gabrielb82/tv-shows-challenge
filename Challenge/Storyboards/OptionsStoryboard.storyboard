@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Vye-Rs-D1W">
+            <objects>
+                <navigationController storyboardIdentifier="OptionsNavigationController" id="qaz-kw-ptJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R56-ic-plU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.80000001190000003" green="0.27450981740000002" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="2" vertical="1"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="DvH-fa-1tj" kind="relationship" relationship="rootViewController" id="qCg-jv-BYf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jE7-qV-gth" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1012" y="130"/>
+        </scene>
+        <!--Options-->
+        <scene sceneID="xrq-IN-LCh">
+            <objects>
+                <viewController id="DvH-fa-1tj" customClass="OptionsViewController" customModule="Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ICd-vf-Z4Y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3W9-GR-ikE">
+                                <rect key="frame" x="75.5" y="742" width="263" height="54"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.27450981740000002" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="6r2-ft-iWe"/>
+                                    <constraint firstAttribute="width" constant="263" id="PP0-SF-nU3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Medium" family="Kohinoor Telugu" pointSize="25"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Sign Out"/>
+                                <connections>
+                                    <action selector="signOut:" destination="DvH-fa-1tj" eventType="touchUpInside" id="rDo-7l-X3F"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="biometric" translatesAutoresizingMaskIntoConstraints="NO" id="kJQ-ma-iwv">
+                                <rect key="frame" x="87" y="113" width="240" height="155"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="5tO-sp-Z2I"/>
+                                    <constraint firstAttribute="height" constant="155" id="dkX-iR-Yzl"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Authenticate with FaceID or Touch ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sB5-hT-kDc">
+                                <rect key="frame" x="20" y="289" width="319" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="daM-U9-3p5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Medium" family="Kohinoor Telugu" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VQJ-mL-Qnx">
+                                <rect key="frame" x="347" y="284" width="49" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="47" id="L0Y-bw-qis"/>
+                                    <constraint firstAttribute="height" constant="31" id="tw7-4W-G8a"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="toggleCanAuthenticate:" destination="DvH-fa-1tj" eventType="touchUpInside" id="Ddc-JH-vTA"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2he-7i-f5P"/>
+                        <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="0.98999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="VQJ-mL-Qnx" firstAttribute="top" secondItem="2he-7i-f5P" secondAttribute="top" constant="196" id="4cn-36-gZE"/>
+                            <constraint firstItem="sB5-hT-kDc" firstAttribute="top" secondItem="kJQ-ma-iwv" secondAttribute="bottom" constant="21" id="A7v-CP-cxr"/>
+                            <constraint firstItem="VQJ-mL-Qnx" firstAttribute="leading" secondItem="sB5-hT-kDc" secondAttribute="trailing" constant="8" id="IOd-Mw-O7H"/>
+                            <constraint firstItem="sB5-hT-kDc" firstAttribute="leading" secondItem="2he-7i-f5P" secondAttribute="leading" constant="20" id="QZA-id-Rpi"/>
+                            <constraint firstItem="kJQ-ma-iwv" firstAttribute="centerX" secondItem="ICd-vf-Z4Y" secondAttribute="centerX" id="Thh-xh-3CE"/>
+                            <constraint firstItem="3W9-GR-ikE" firstAttribute="centerX" secondItem="ICd-vf-Z4Y" secondAttribute="centerX" id="Zxd-Vs-Cfa"/>
+                            <constraint firstItem="2he-7i-f5P" firstAttribute="trailing" secondItem="VQJ-mL-Qnx" secondAttribute="trailing" constant="20" id="bYN-6H-fZs"/>
+                            <constraint firstItem="2he-7i-f5P" firstAttribute="bottom" secondItem="3W9-GR-ikE" secondAttribute="bottom" constant="17" id="gac-hN-Fzw"/>
+                            <constraint firstItem="kJQ-ma-iwv" firstAttribute="top" secondItem="2he-7i-f5P" secondAttribute="top" constant="25" id="yFM-X3-mJW"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Options" image="gear" catalog="system" id="g4I-Ox-67l"/>
+                    <navigationItem key="navigationItem" title="Options" id="ZHA-IS-6PH"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="authenticateSwitch" destination="VQJ-mL-Qnx" id="lyn-Wl-lGI"/>
+                        <outlet property="signOutButton" destination="3W9-GR-ikE" id="Eb9-Ro-VTb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pzW-jL-Eow" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7.2463768115942031" y="129.91071428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="biometric" width="86.333335876464844" height="64.666664123535156"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
+    </resources>
+</document>

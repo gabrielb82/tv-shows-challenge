@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Favorite-->
+        <scene sceneID="Kbi-C2-EpS">
+            <objects>
+                <navigationController storyboardIdentifier="FavoriteStoryboard" id="Dil-5T-NBf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorite" image="heart.fill" catalog="system" id="wCS-CI-yNC"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nah-BQ-50S">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.80000001190000003" green="0.27450981740000002" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="0.98999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="2" vertical="1"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="VGB-MR-HKK" kind="relationship" relationship="rootViewController" id="qff-uc-4Jt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jwc-WR-GyS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1032" y="35"/>
+        </scene>
+        <!--Favorite-->
+        <scene sceneID="WC8-ls-m6h">
+            <objects>
+                <viewController id="VGB-MR-HKK" customClass="FavoriteViewController" customModule="Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zHw-B4-RKe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Sz-Ut-ots">
+                                <rect key="frame" x="101" y="360.5" width="212" height="175"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="broken-heart" translatesAutoresizingMaskIntoConstraints="NO" id="BNR-Ct-FSx">
+                                        <rect key="frame" x="8" y="0.0" width="196" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="HVw-Dv-n2N"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have any favorite show!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62G-MT-k5M">
+                                        <rect key="frame" x="8" y="123" width="196" height="68"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="68" id="aDN-GZ-AcX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="KohinoorTelugu-Medium" family="Kohinoor Telugu" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="212" id="3zI-v4-32G"/>
+                                    <constraint firstAttribute="height" constant="175" id="8aX-F5-37I"/>
+                                    <constraint firstItem="62G-MT-k5M" firstAttribute="top" secondItem="4Sz-Ut-ots" secondAttribute="top" constant="123" id="Qbh-lP-AHa"/>
+                                    <constraint firstItem="BNR-Ct-FSx" firstAttribute="leading" secondItem="4Sz-Ut-ots" secondAttribute="leading" constant="8" id="bmC-Pu-8BJ"/>
+                                    <constraint firstItem="62G-MT-k5M" firstAttribute="leading" secondItem="4Sz-Ut-ots" secondAttribute="leading" constant="8" id="gDR-qi-A18"/>
+                                    <constraint firstAttribute="trailing" secondItem="BNR-Ct-FSx" secondAttribute="trailing" constant="8" id="nAU-Ww-fZR"/>
+                                    <constraint firstAttribute="trailing" secondItem="62G-MT-k5M" secondAttribute="trailing" constant="8" id="ohV-B3-WXf"/>
+                                    <constraint firstItem="BNR-Ct-FSx" firstAttribute="top" secondItem="4Sz-Ut-ots" secondAttribute="top" id="okB-d2-Ekl"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JBN-kh-4SV">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rXA-nF-Mqu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4Sz-Ut-ots" firstAttribute="centerX" secondItem="zHw-B4-RKe" secondAttribute="centerX" id="1Gp-8O-9q6"/>
+                            <constraint firstItem="JBN-kh-4SV" firstAttribute="top" secondItem="rXA-nF-Mqu" secondAttribute="top" id="7zw-Oo-U1A"/>
+                            <constraint firstItem="4Sz-Ut-ots" firstAttribute="centerY" secondItem="zHw-B4-RKe" secondAttribute="centerY" id="HMH-pA-1n7"/>
+                            <constraint firstItem="JBN-kh-4SV" firstAttribute="leading" secondItem="rXA-nF-Mqu" secondAttribute="leading" id="YHK-2V-Cpt"/>
+                            <constraint firstItem="JBN-kh-4SV" firstAttribute="trailing" secondItem="rXA-nF-Mqu" secondAttribute="trailing" id="kQt-XB-osR"/>
+                            <constraint firstItem="JBN-kh-4SV" firstAttribute="bottom" secondItem="rXA-nF-Mqu" secondAttribute="bottom" id="yhz-mJ-5YZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Favorite" id="4iN-Bs-hk5"/>
+                    <connections>
+                        <outlet property="favoriteTableView" destination="JBN-kh-4SV" id="D4D-sJ-XLy"/>
+                        <outlet property="noFavoritePanel" destination="4Sz-Ut-ots" id="VqD-sr-JUh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="biF-3W-ejJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-14.492753623188406" y="34.821428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="broken-heart" width="341.33334350585938" height="341.33334350585938"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

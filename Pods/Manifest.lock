@@ -1,0 +1,32 @@
+PODS:
+  - ImageViewer (0.1.4)
+  - IQKeyboardManagerSwift (6.5.6)
+  - SwiftSpinner (2.2.0)
+
+DEPENDENCIES:
+  - ImageViewer (from `https://github.com/tovkal/ImageViewer`)
+  - IQKeyboardManagerSwift
+  - SwiftSpinner
+
+SPEC REPOS:
+  trunk:
+    - IQKeyboardManagerSwift
+    - SwiftSpinner
+
+EXTERNAL SOURCES:
+  ImageViewer:
+    :git: https://github.com/tovkal/ImageViewer
+
+CHECKOUT OPTIONS:
+  ImageViewer:
+    :commit: 76944a7b1192d1a0af6767f33804a69bd2d9e743
+    :git: https://github.com/tovkal/ImageViewer
+
+SPEC CHECKSUMS:
+  ImageViewer: 0c79f53859883f4215b0ceeac4c7e4d3caede8a3
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  SwiftSpinner: f9b59477fe107427f2b5b835497d6636fa167ede
+
+PODFILE CHECKSUM: 5de9c71455afc317653b794bd9f4f8455662a9dd
+
+COCOAPODS: 1.10.1

@@ -1,0 +1,22 @@
+{
+  "name": "ImageViewer",
+  "version": "0.1.4",
+  "summary": "Simple full screen UIImageView viewer.",
+  "description": "Simple full screen UIImageView viewer, can be dismissed with a tap or flick",
+  "homepage": "https://github.com/Tovkal/ImageViewer",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": "Andrés Pizá Bückmann",
+  "platforms": {
+    "ios": "10.3"
+  },
+  "source": {
+    "git": "https://github.com/Tovkal/ImageViewer.git",
+    "tag": "0.1.4"
+  },
+  "source_files": "ImageViewer",
+  "swift_versions": "4.2",
+  "swift_version": "4.2"
+}

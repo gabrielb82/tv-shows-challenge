@@ -11,7 +11,19 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        getShowList()
+    }
+    
+    func getShowList() {
+        Services.shared.getShowList(page: 1) { result in
+            switch result {
+                case .success(let showList):
+                    print(showList)
+                case .failure(let error):
+                    print(error)
+            }
+        }
     }
 
 
