@@ -7,11 +7,13 @@ The goal of this project was to create an app that access an API and show inform
 + PIN screen;
   - Register PIN screen;
 + List of TV Shows;
-  - Detailed information about a TV Shows;
+  + Detailed information about a TV Shows;
+    - List of episodes divided by season;
+    - Detailed information about a selected episode;
 - Search for a TV Show;
-+ Search for a person connected to a TV Show
++ Search for a person connected to a TV Show;
   - Details about said person;
-- List of Favorit TV Shows (TV Shows can be marked as favorite on it's detailed information screen);
+- List of Favorite TV Shows (TV Shows can be marked/unmarked as favorite on it's detailed information screen and it can also be removed on the list);
 - Options screen, where the user can select if it will use the device's biometry authentication (if possible);
 
 ## Project minimum requirements:
