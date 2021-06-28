@@ -14,6 +14,13 @@ The goal of this project was to create an app that access an API and show inform
 - List of Favorit TV Shows (TV Shows can be marked as favorite on it's detailed information screen);
 - Options screen, where the user can select if it will use the device's biometry authentication (if possible);
 
+## Project minimum requirements:
+
+- Xcode 9.3 +
+- MacOS Sierra 10.15 +
+- iOS 11 +
+- Swift 4 +
+
 ## Project Dependencies:
 
 This project runs using 3rd party code libraries managed by Cocoapods, to install
