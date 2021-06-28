@@ -1,4 +1,4 @@
-# tv-shows-challenge
+# TV Shows Challenge
 
 ## Goal
 
