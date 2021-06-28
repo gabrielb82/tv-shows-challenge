@@ -7,6 +7,7 @@
 
 import XCTest
 @testable import Challenge
+import CoreData
 
 class ChallengeTests: XCTestCase {
     
@@ -62,44 +63,6 @@ class ChallengeTests: XCTestCase {
         let permission = authenticationViewModel.checkIfCanAuthenticate()
         
         XCTAssertTrue(permission)
-    }
-    
-    func testCanUpdateFavoriteList() {
-        show = Show(id: -1, url: "", type: "", name: "New TV Show", language: "English", genres: ["Drama"], status: "ended", runtime: 60, premiered: "2021-06-25", schedule: nil, rating: nil, network: nil, image: nil, summary: "", updated: 0)
-        
-        guard let showMock = show else { return }
-        
-        let homeDetailsViewModel = HomeDetailsViewModel(showID: showMock.id ?? 00)
-        
-        homeDetailsViewModel.updateFavorite(with: showMock) { response in
-            XCTAssertEqual(GenericResponse.success, response)
-        }
-        
-        homeDetailsViewModel.updateFavorite(with: showMock) { response in
-            return
-        }
-    }
-    
-    func testCanListFavorite() {
-        show = Show(id: -1, url: "", type: "", name: "New TV Show", language: "English", genres: ["Drama"], status: "ended", runtime: 60, premiered: "2021-06-25", schedule: nil, rating: nil, network: nil, image: nil, summary: "", updated: 0)
-        
-        guard let showMock = show else { return }
-        
-        let homeDetailsViewModel = HomeDetailsViewModel(showID: showMock.id ?? 00)
-        
-        homeDetailsViewModel.updateFavorite(with: showMock) { response in
-            return
-        }
-        
-        let favoriteViewModel = FavoriteViewModel()
-        
-        favoriteViewModel.getFavoritesList()
-        
-        XCTAssertGreaterThan(favoriteViewModel.favorites.count, 0)
-        
-        homeDetailsViewModel.updateFavorite(with: showMock) { response in
-            return
-        }
     }
 
 }

@@ -9,6 +9,31 @@
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
+		<key>ChallengeTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>C88919FF268204C1009211C0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C8891A18268204C3009211C0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C8891A23268204C3009211C0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>

@@ -51,4 +51,46 @@ class FavoriteViewModel {
             return
         }
     }
+    
+    /**
+        Remove the Favorite from list
+     
+        - Parameter id: The ID of the Show to be removed from the list of Favorites
+        - Parameter completion: Returns a response indicating if the result was a sucess or a failure
+    */
+    func removeFavorite(with id: Int, completion: @escaping(GenericResponse) -> Void) {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedObjectContext = appDelegate.persistentContainer.viewContext
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Favorite")
+        request.returnsObjectsAsFaults = false
+        
+        request.predicate = NSPredicate(format: "id = \(id)")
+        
+        do {
+            let result = try managedObjectContext.fetch(request)
+            if result.count > 0 {
+                if let favorite = result[0] as? Favorite {
+                    managedObjectContext.delete(favorite)
+                    do {
+                        try managedObjectContext.save()
+                    } catch {
+                        print("error while save.")
+                    }
+                    completion(.success)
+                } else {
+                    completion(.failure)
+                }
+            }
+            else {
+                completion(.failure)
+            }
+        } catch {
+            completion(.failure)
+        }
+    }
 }

@@ -124,6 +124,9 @@ class HomeDetailsViewModel {
         if let favorite = getFavorite(from: id) {
             do {
                 managedObjectContext.delete(favorite)
+                try managedObjectContext.save()
+                completion(.success)
+            } catch {
                 completion(.success)
             }
         }

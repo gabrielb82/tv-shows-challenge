@@ -77,7 +77,7 @@ class HomeDetailsViewController: UIViewController {
         setupCastTableView()
         
         poster?.roundedCorner(radius: 10)
-        poster?.dropShadow(color: .black, opacity: 1, offSet: CGSize(width: -1, height: 1), radius: 10, scale: true)
+        poster?.dropShadow(color: .black, opacity: 0.5, offSet: CGSize(width: -1, height: 1), radius: 15, scale: true)
         posterLoading?.startAnimating()
         
         ratingView?.roundedCorner(radius: 10)

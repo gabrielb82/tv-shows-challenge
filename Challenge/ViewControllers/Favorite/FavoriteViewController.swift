@@ -60,6 +60,18 @@ class FavoriteViewController: UIViewController {
         favoriteViewModel?.getFavoritesList()
     }
     
+    func removeFavorite(with id: Int) {
+        favoriteViewModel?.removeFavorite(with: id, completion: { response in
+            switch response {
+                case .success:
+                    self.favoriteViewModel?.getFavoritesList()
+                case .failure:
+                    ShowAlert.showSimpleAlert(with: "Error", message: "Can't remove Favorite Show from the list. Please, try again.", preferredStyle: .alert, viewController: self)
+                    self.favoriteTableView?.reloadData()
+            }
+        })
+    }
+    
 }
 
 // MARK: - Delegates
@@ -97,6 +109,7 @@ extension FavoriteViewController: UITableViewDelegate {
         homeDetailsViewController.showID = Int(showID)
         self.navigationController?.pushViewController(homeDetailsViewController, animated: true)
     }
+    
 }
 
 // MARK: - Data Source
@@ -113,5 +126,16 @@ extension FavoriteViewController: UITableViewDataSource {
         cell.favorite = self.favoriteViewModel?.favorites[indexPath.row]
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            guard let id = self.favoriteViewModel?.favorites[indexPath.row].id else { return }
+            self.removeFavorite(with: Int(id))
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
 }
